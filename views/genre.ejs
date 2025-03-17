@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paperless - Home</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+     /* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:root {
+  --background: #121212;
+  --surface: #1e1e1e;
+  --surface-light: #2d2d2d;
+  --primary: #00b3a6;
+  --primary-dark: #008a80;
+  --primary-light: #4dd8cf;
+  --text: #e1e1e1;
+  --text-secondary: #b0b0b0;
+  --accent: #00e5d3;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5%;
+  background-color: var(--surface);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo h1 {
+  color: var(--primary-light);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('/images/books-dark-bg.jpg') center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 179, 166, 0.2) 0%, transparent 70%);
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary-light), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  position: relative;
+  z-index: 2;
+}
+
+/* Genres Section */
+.genres {
+  padding: 5rem 5%;
+  background-color: var(--background);
+}
+
+.genres h3 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.genre-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.genre-card {
+  background-color: var(--surface);
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 1px solid var(--surface-light);
+}
+
+.genre-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary-dark);
+}
+
+.genre-card h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--primary-light);
+  font-weight: 600;
+}
+
+.genre-card p {
+  margin-bottom: 1.8rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.genre-card button {
+  background-color: var(--primary);
+  color: #121212;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.genre-card button:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 179, 166, 0.3);
+}
+
+/* Footer */
+footer {
+  background-color: var(--surface);
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--surface-light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .logo {
+    margin-bottom: 1rem;
+  }
+  
+  .nav-links {
+    width: 100%;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+  }
+  
+  .hero {
+    padding: 4rem 1rem;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+  
+  .genres {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {  
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .hero h2 {
+    font-size: 2rem;
+  }
+  
+  .genre-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .genres h3 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Dark Mode Animation */
+@keyframes glow {
+  0% { box-shadow: 0 0 5px var(--primary-dark); }
+  50% { box-shadow: 0 0 20px var(--primary); }
+  100% { box-shadow: 0 0 5px var(--primary-dark); }
+}
+
+.genre-card:hover {
+  animation: glow 2s infinite;
+}
+    </style>
+</head>
+<body>
+    <%- include('./partials/header', {pageTitle: 'Paperless - Home'}) %>
+
+    <main>
+        <section class="hero">
+            <h2>Welcome to Paperless</h2>
+            <p>Explore your favorite books in various genres without the hassle of paper!</p>
+        </section>
+
+        <section class="genres">
+            <h3>Explore Our Genres</h3>
+            <form action="/select-genre" method="POST">
+                <div class="genre-cards">
+                    <% genres.forEach(function(genre) { %>
+                        <div class="genre-card">
+                            <h4><%= genre.name %></h4>
+                            <p><%= genre.description %></p>
+                            <button type="submit" name="genre" value="<%= genre.name.toLowerCase() %>">Explore</button>
+                        </div>
+                    <% }); %>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Paperless. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+
+<!-- payment.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .payment-container {
+            background: white;
+            padding: 20px;
+            margin: 50px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .qr-code {
+            width: 300px;
+            height: 300px;
+            margin-top: 10px;
+        }
+        .button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #4CAF50; /* Soft green for a fresh look */
+    color: white;
+    border: 2px solid #4CAF50; /* Border to enhance visibility */
+    border-radius: 12px; /* Rounded corners */
+    font-size: 16px; /* Slightly larger text */
+    font-weight: bold; /* Makes the text stand out */
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45a049; /* Slightly darker green for hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.button:active {
+    background-color: #3e8e41; /* Even darker green when clicked */
+    transform: scale(1); /* Removes zoom effect on click */
+}
+
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Scan to Pay</h2>
+        <p>Pay ₹99 to subscribe to Paperless Premium</p>
+        <img src='/images/qr.jpg' alt="QR Code" class="qr-code">
+        <div class="Success">
+            <a href="/home" > <button> Payment Done </button></a>
+        </div>
+    </div>
+
+</body>
+</html>
